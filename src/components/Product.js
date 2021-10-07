@@ -1,24 +1,40 @@
 import React, { Component } from "react";
 
 class Product extends Component {
+
+  // constructor(props) {
+  //   super(props);
+  //   this.onAddToCart = this.onAddToCart.bind(this)
+  // }
+
+  // onAddToCart(){
+  //   alert(this.props.children);
+  //   console.log(this.props.children);
+  // }
+
+  onAddToCart2 = () => {
+    alert(this.props.children);
+    console.log(this.props.children);
+  }
+
   render() {
     return (
-      
-      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div>
+        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <div className="thumbnail">
-              <img alt="note10" src="https://phoneaqua.com/products/Samsung-Galaxy-Note-10-Plus%205G%20Price.webp"/>
-              <div className="caption">
-                  <h3>Samsung note 10</h3>
-                  <p>
-                      20.000.000
-                  </p>
-                  <p>
-                      <a className="btn btn-success">BUY</a>
-                  </p>
-              </div>
+            <img alt={this.props.name} src={this.props.image} />
+            <div className="caption">
+              <h3>{this.props.children}</h3>
+              <p>
+                {this.props.price} VND
+              </p>
+              <p>
+                <a className="btn btn-primary" onClick={this.onAddToCart2}>Mua ngay</a>
+              </p>
+            </div>
           </div>
+        </div>        
       </div>
-      
     );
   }
 }
